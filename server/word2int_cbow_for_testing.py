@@ -48,7 +48,7 @@ def vocab_dict_glove(path_to_glove):
 
 def get_cwob_score_labels(dict1, old_dir):
     dir_saved = old_dir.split('/')[0]
-    print dir_saved
+    print (dir_saved)
     #print(" nombre de file dans old dir -->", len(os.listdir(dir_saved)))
     files = [fi for fi in os.listdir(dir_saved) if (fi[0] != "." and fi[-3:] == 'txt')] ## does not give ".."
     paths = map(lambda x: os.path.join(dir_saved, x), files)
