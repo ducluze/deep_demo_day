@@ -1,8 +1,18 @@
 <!doctype html>
 
-<html><head><title>Test URL Encoding</title></head>
+<html><head><title>Test URL Encoding</title>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-<form method="POST" action="{{ url_for('show_article') }}">
+
+
+  <nav class="col-1">Nav</nav>
+  <div class="col-2">
+  	<header>Header</header>
+    <main class="content">
+    <article>
+      <form method="POST" action="{{ url_for('show_article') }}">
   <div>
     <label for="uname">Veuillez choisir un url d'article :</label>
     <input type="text" id="uname" name="choosed_url">
@@ -11,5 +21,12 @@
     <button name="url_send">Envoyer</button>
   </div>
 </form>
+
+    </article>
+    </main>
+  	<footer>Footer</footer>
+  </div>
+
+
 </body>
 </html>

@@ -27,7 +27,7 @@ class Config:
     def __init__(self):
         pass
 
-
+6
 class FeedforwardModel():
     '''
     This is the Feedforward Model class. It takes in a 100 dimensional BOW vector per document example and

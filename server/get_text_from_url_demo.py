@@ -5,8 +5,6 @@ import os
 import sys
 import codecs
 import requests
-from goose import Goose
-#from tqdm import tqdm
 #import numpy as np
 import re
 from bs4 import BeautifulSoup
@@ -52,10 +50,6 @@ def get_text(url):
     # print('Text scrapped successfully at -->',PATH_SAVED)
     # return(PATH_SAVED)
 
-def get_text_goose(url):
-    g = Goose()
-    article = g.extract(url=url)
-    return article
 
 if __name__ == "__main__":
     get_text(sys.argv[1])
