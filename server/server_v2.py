@@ -10,7 +10,7 @@ PRETRAINED_VOCAB_PATH = "./glove.6B/glove.6B.100d.txt"
 @app.route('/index')
 @app.route('/', methods=['GET'])
 def index():
-    print request.form
+    print (request.form)
     return render_template('template.html')
 
 
@@ -28,7 +28,7 @@ def new_prediction():
 @app.route('/show_article', methods=['POST'])
 def show_article():
     url = request.form['choosed_url']
-    print url
+    print (url)
     article = get_text(url)
     article.encode(encoding='UTF-8')
     return render_template('article.html', article=article, url=url)
