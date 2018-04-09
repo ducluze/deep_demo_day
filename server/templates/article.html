@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+</head>
+<body>
+    <div>{{ article }}</div>
+
+
+
+<form action="{{ url_for('new_prediction') }}" method="POST" >
+        <input type="text" id="uname" name="choosed_url" value="{{article}}" style="display:none;">
+        <div>
+        <button name="make_prediction">Make a prediction</button>
+        </div>
+    </form>
+</body>
+</html>

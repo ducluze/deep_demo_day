@@ -1,0 +1,15 @@
+<!doctype html>
+
+<html><head><title>Test URL Encoding</title></head>
+<body>
+<form method="POST" action="{{ url_for('show_article') }}">
+  <div>
+    <label for="uname">Veuillez choisir un url d'article :</label>
+    <input type="text" id="uname" name="choosed_url">
+  </div>
+  <div>
+    <button name="url_send">Envoyer</button>
+  </div>
+</form>
+</body>
+</html>

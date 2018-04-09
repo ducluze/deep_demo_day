@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+</head>
+
+<body>
+    <div>This is the prediction for this article: {{pred}}</div>
+    <div>it took: {{time}} </div>
+
+        <form  action="{{ url_for('index') }}">
+
+        <div>
+        <button name="try_prediction">Make a new prediction</button>
+        </div>
+    </form>
+
+</body>
+</html>
