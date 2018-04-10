@@ -1,20 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Prediction</title>
-</head>
+<!doctype html>
 
+<html><head><title>Test URL Encoding</title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <div>This is the prediction for this article: {{pred}}</div>
-    <div>it took: {{time}} </div>
+
+
+  <div class="col-2">
+  	<header><img class="logo" src="{{ url_for('static', filename='image/logo.png')}}"></header>
+
+    <main class="content">
+    <article>
+<div class="div2">{{ article }}</div>
+
+
+
+    </article>
+    </main>
+  	<footer><img class="knight" src="{{ url_for('static', filename='image/LOGO-Knight-primary.png')}}"></footer>
+  </div>
+  <nav class="col-3" style="background: {{bg_color}}">
+      <div class="button-holder-new">
+          <div class="prediction-text">This is the prediction for this article:</div>
+          <div class="prediction-class">{{pred}}</div>
 
         <form  action="{{ url_for('index') }}">
 
         <div>
-        <button name="try_prediction">Make a new prediction</button>
+        <button class="button-new-prediction" name="try_prediction">Make a new prediction</button>
         </div>
     </form>
+
+
+      </div>
+  </nav>
+
+
 
 </body>
 </html>

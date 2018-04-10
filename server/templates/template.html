@@ -1,30 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html><head><title>Test URL Encoding</title>
+<html><head>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+
+  <title>Test URL Encoding</title>
 
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 
-  <nav class="col-1">Nav</nav>
   <div class="col-2">
-  	<header>Header</header>
+  	<header><img class="logo" src="{{ url_for('static', filename='image/logo.png')}}"></header>
+
     <main class="content">
-    <article>
-      <form method="POST" action="{{ url_for('show_article') }}">
-  <div>
-    <label for="uname">Veuillez choisir un url d'article :</label>
-    <input type="text" id="uname" name="choosed_url">
-  </div>
-  <div>
-    <button name="url_send">Envoyer</button>
-  </div>
-</form>
+    <article class="article">
+      <form class="show_article" method="POST" action="{{ url_for('show_article') }}">
+    <label class="article-label" for="uname">Please enter a valid URL</label>
+    <input class="article-input" type="text" id="uname" name="choosed_url" placeholder="e.g:
+    https://www.nytimes.com/2018/04/09/us/politics/fbi-raids-office-of-trumps-longtime-lawyer-michael-cohen.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=a-lede-package-region&region=top-news&WT.nav=top-news">
+    <button class="button-article"name="url_send">Send</button>
+    </form>
 
     </article>
     </main>
-  	<footer>Footer</footer>
+  	<footer class="footer"><img class="knight" src="{{ url_for('static', filename='image/LOGO-Knight-primary.png')}}"></footer>
   </div>
 
 

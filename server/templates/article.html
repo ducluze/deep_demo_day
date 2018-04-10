@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Article</title>
+<!doctype html>
+
+<html><head><title>Test URL Encoding</title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div>{{ article }}</div>
+
+
+  <div class="col-2">
+  	<header><img class="logo" src="{{ url_for('static', filename='image/logo.png')}}"></header>
+
+    <main class="content">
+    <article>
+<div class="div2">{{ article }}</div>
 
 
 
-<form action="{{ url_for('new_prediction') }}" method="POST" >
+    </article>
+    </main>
+  	<footer><img class="knight" src="{{ url_for('static', filename='image/LOGO-Knight-primary.png')}}"></footer>
+  </div>
+  <nav class="col-1">
+        <div class="button-holder">
+      <form action="{{ url_for('new_prediction') }}" method="POST" >
         <input type="text" id="uname" name="choosed_url" value="{{article}}" style="display:none;">
-        <div>
-        <button name="make_prediction">Make a prediction</button>
-        </div>
+
+        <button class="button-prediction" name="make_prediction">Make a prediction</button>
     </form>
+        </div>
+
+  </nav>
+
+
+
 </body>
 </html>

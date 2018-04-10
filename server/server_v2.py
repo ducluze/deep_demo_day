@@ -3,8 +3,10 @@ from get_text_from_url_demo import *
 from feedforward_cbow_prints import *
 import time
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 PRETRAINED_VOCAB_PATH = "./glove.6B/glove.6B.100d.txt"
+
 
 
 @app.route('/index')
@@ -22,7 +24,11 @@ def new_prediction():
     #article = get_text(url)
     all_x, lengths = cbow_glove_v2(article, dict1, size_of_vocab, "output_pickled")
     prediction = do_predict_v2(all_x, "model/", "model.ckpt")
-    return render_template('prediction.html', time=str(time.time() - t0), pred=str(prediction[0][0][0]))
+    if prediction[0][0][0] > 0:
+        color = '#90EE90'
+    else:
+        color = '#F08080'
+    return render_template('prediction.html', article=article, pred=str(prediction[0][0][0]), bg_color=color)
 
 
 @app.route('/show_article', methods=['POST'])
